@@ -1,0 +1,1 @@
+tar cvpzf /media/ldap_backup_7_12_2012.tar.gz --exclude=/proc --exclude=/lost+found --exclude=/media --exclude=/mnt --exclude=/sys --exclude=/boot/ --exclude=/etc/fstab --exclude=/etc/network/* --exclude=/dev /
