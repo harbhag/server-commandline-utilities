@@ -13,13 +13,13 @@ export APACHE_RUN_GROUP=www-data
 so the group for apach is www-data.
 
 Create directroy for images
-$ mkdir /wp-contents/uploads
+$ mkdir wp-content/uploads
 
 Change group of the directory to www-data
-$ chgrp www-data /wp-contents/uploads
+$ chgrp www-data wp-content/uploads
 
 Add writable permission to the group
-$ chmod g+w /wp-contents/uploads
+$ chmod g+w wp-content/uploads
 or
-$ chmod 775 /wp-contents/uploads
+$ chmod 775/wp-content/uploads
 Changing the last digit of the permission to 7 is very dangerous because anyone will be able to edit the files.
