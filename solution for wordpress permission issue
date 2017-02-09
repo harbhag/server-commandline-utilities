@@ -1,25 +1,12 @@
-Can't upload images to WordPress
-The error says:
-"Unable to create directory /wp-content/uploads//. Is its parent directory writable by the server?"
-Many people have written various articles about this error and some of them are really security vulnerable.
-Here I provide a more secure solution.
-
-WARNING: There are a lot of articles which say "change permission of directories to 757 or 777". This is very security vulnerable so I won't recommend these solutions!
-
-Check for the group on which apach runs
-In the case of ubuntu server, it's written in /etc/apache2/envvars and says
-export APACHE_RUN_USER=www-data
-export APACHE_RUN_GROUP=www-data
-so the group for apach is www-data.
-
-Create directroy for images
-$ mkdir wp-content/uploads
-
 Change group of the directory to www-data
-$ chgrp www-data wp-content/uploads
+
+$ chgrp -R www-data wp-content
 
 Add writable permission to the group
-$ chmod g+w wp-content/uploads
+
+$ chmod -R g+w wp-content
+
 or
-$ chmod 775/wp-content/uploads
+
+$ chmod -R 775/wp-content
 Changing the last digit of the permission to 7 is very dangerous because anyone will be able to edit the files.
